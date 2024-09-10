@@ -38,18 +38,18 @@ pip install pandas
 
 ### Parte 1
 - [X] Escolher conjunto de dados
-- [] Criação da API que permite:
-    - [] Consulta
-    - [] Atualização
-    - [] Inserção
-    - [] Deleção
+- [ ] Criação da API que permite:
+    - [ ] Consulta
+    - [ ] Atualização
+    - [ ] Inserção
+    - [ ] Deleção
 
 ### Parte 2
-- [] Documentar o projeto utilizando Postman
-    - [] Exemplos de requisições
+- [ ] Documentar o projeto utilizando Postman
+    - [ ] Exemplos de requisições
 
 ### Parte 3
-- [] Hospedar a API na web
+- [ ] Hospedar a API na web
 
 ### Parte 4
-- [] Criação de um script Python que seja capaz de consumir todas as funcionalidades da API
+- [ ] Criação de um script Python que seja capaz de consumir todas as funcionalidades da API
