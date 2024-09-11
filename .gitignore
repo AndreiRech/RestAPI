@@ -1,2 +1,6 @@
 games.csv
 app\static\games.csv
+__pycache__
+db.sqlite
+db.sqlite-journal
+.git
