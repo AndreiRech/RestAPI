@@ -34,14 +34,19 @@ pip install pandas
 
 ```
 
+Com tudo instalado, informe o comando para rodar a aplicação:
+```
+uvicorn main:app --reload
+```
+
 # O QUE FAZER
 
 ### Parte 1
 - [X] Escolher conjunto de dados
 - [] Criação da API que permite:
-    - [] Consulta
+    - [X] Consulta
     - [] Atualização
-    - [] Inserção
+    - [X] Inserção
     - [] Deleção
 
 ### Parte 2
