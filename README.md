@@ -38,6 +38,7 @@ pip install pandas
 
 ### Parte 1
 - [X] Escolher conjunto de dados
+- [X] Tratar conjunto, removendo informações desnecessárias
 - [ ] Criação da API que permite:
     - [ ] Consulta
     - [ ] Atualização
