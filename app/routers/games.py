@@ -243,3 +243,42 @@ async def create(
     
     return game
     
+@router.delete('/{game_id}', status_code=200)
+async def delete(
+  game_id: Annotated[int, Path(title='O ID do jogo a ser deletado')],
+  session: Session = Depends(get_session)
+) -> str:
+    """
+    Deleta um jogo com base no ID fornecido.
+  
+    - **id**: ID do jogo a ser deletado. Deve ser um valor numérico inteiro.
+     - **session**: Dependência que fornece a sessão do banco de dados.
+    
+    Retorna uma mensagem indicando que o jogo foi deletado com sucesso.
+    
+    - Se o jogo com o ID especificado não for encontrado, retorna um erro 404.
+    - Se houver um erro ao deletar o jogo, retorna um erro 500.
+
+    - **Exemplo de Requisição:**
+      ```http
+      DELETE /games/1
+      ```
+
+    - **Exemplo de Resposta:**
+      ```json
+      "Jogo deletado com sucesso."
+      ```
+
+    - **Código de Status:**
+      - `204 No Content`: O jogo foi deletado com sucesso.
+      - `404 Not Found`: O jogo com o ID fornecido não foi encontrado.
+    """
+    game = session.get(Game, game_id)
+    if game is None:
+        raise HTTPException(status_code=404, detail='Jogo não encontrado')
+    
+    session.delete(game)
+    session.commit()
+    
+    return "Jogo deletado com sucesso."
+
