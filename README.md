@@ -34,6 +34,12 @@ pip install pandas
 
 ```
 
+*SQLModel*
+```
+pip install sqlmodel
+
+```
+
 Com tudo instalado, informe o comando para rodar a aplicação:
 ```
 uvicorn main:app --reload
@@ -46,13 +52,13 @@ uvicorn main:app --reload
 - [X] Tratar conjunto, removendo informações desnecessárias 
 - [] Criação da API que permite:
     - [X] Consulta
-    - [] Atualização
+    - [X] Atualização
     - [X] Inserção
-    - [] Deleção
+    - [X] Deleção
 
 ### Parte 2
-- [ ] Documentar o projeto utilizando Postman
-    - [ ] Exemplos de requisições
+- [X] Documentar o projeto utilizando Postman
+    - [X] Exemplos de requisições
 
 ### Parte 3
 - [ ] Hospedar a API na web
