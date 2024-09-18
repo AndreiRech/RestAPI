@@ -1,6 +1,6 @@
 from typing import Annotated, List, Optional
 from fastapi import APIRouter, Depends, HTTPException, Path, Query
-from app.models.game import Game, GameBase
+from app.models.game import Game, GameBase, GameUpdate
 from sqlmodel import Session, or_, select
 from app.database.db import get_session
 
@@ -58,6 +58,56 @@ async def games(
     game_list = session.exec(select(Game)).all()
     return game_list
 
+@router.get('/{game_name}', response_model=Game, status_code=200)
+async def game(
+    game_name: Annotated[int, Path(title='O Nome do jogo')],
+    session: Session = Depends(get_session)
+) -> Game:
+    """
+    Retorna um jogo com base no ID fornecido.
+    
+    - **game_name**: Nome do jogo a ser recuperado. Deve ser um valor em String.
+    - **session**: Dependência que fornece a sessão do banco de dados.
+    
+    Retorna um objeto `Game` correspondente ao nome fornecido.
+    
+    - Se o jogo com o nome especificado não for encontrado, retorna um erro 404.
+
+    - **Exemplo de Requisição:**
+      ```http
+      GET /games/The Witcher 3
+      ```
+
+    - **Exemplo de Resposta:**
+      ```json
+      {
+        "id": 1,
+        "name": "The Witcher 3",
+        "release_date": "Aug 20, 2024",
+        "estimated_owners": "10 - 2000",
+        "price": 59.99,
+        "about": "Jogagando com o bruxão",
+        "metacritic_score": 85,
+        "positive_rev": 15000,
+        "negative_rev": 500,
+        "achievements": 50,
+        "average_playtime": 120,
+        "categories": "RPG",
+        "genres": "Action",
+        "tags": "singleplayer, fantasy"
+      }
+      ```
+
+    - **Código de Status:**
+      - `200 OK`: O jogo foi encontrado e a resposta contém os dados do jogo.
+      - `404 Not Found`: O jogo com o ID fornecido não foi encontrado.
+    """
+    game = session.get(Game, game_name)
+    if game is None:
+        raise HTTPException(status_code=404, detail='Jogo não encontrado')
+    
+    return game
+  
 @router.get('/{game_id}', response_model=Game, status_code=200)
 async def game(
     game_id: Annotated[int, Path(title='O ID do jogo')],
@@ -243,42 +293,100 @@ async def create(
     
     return game
     
-@router.delete('/{game_id}', status_code=200)
+@router.delete('/delete/{game_id}', status_code=200)
 async def delete(
   game_id: Annotated[int, Path(title='O ID do jogo a ser deletado')],
   session: Session = Depends(get_session)
 ) -> str:
-    """
-    Deleta um jogo com base no ID fornecido.
+  """
+  Deleta um jogo com base no ID fornecido.
   
-    - **id**: ID do jogo a ser deletado. Deve ser um valor numérico inteiro.
-     - **session**: Dependência que fornece a sessão do banco de dados.
+  - **id**: ID do jogo a ser deletado. Deve ser um valor numérico inteiro.
+  - **session**: Dependência que fornece a sessão do banco de dados.
     
-    Retorna uma mensagem indicando que o jogo foi deletado com sucesso.
+  Retorna uma mensagem indicando que o jogo foi deletado com sucesso.
     
-    - Se o jogo com o ID especificado não for encontrado, retorna um erro 404.
-    - Se houver um erro ao deletar o jogo, retorna um erro 500.
+  - Se o jogo com o ID especificado não for encontrado, retorna um erro 404.
+  - Se houver um erro ao deletar o jogo, retorna um erro 500.
+
+  - **Exemplo de Requisição:**
+    ```http
+    DELETE /games/1
+    ```
+
+  - **Exemplo de Resposta:**
+    ```json
+    "Jogo deletado com sucesso."
+    ```
+
+  - **Código de Status:**
+    - `204 No Content`: O jogo foi deletado com sucesso.
+    - `404 Not Found`: O jogo com o ID fornecido não foi encontrado.
+  """
+  
+  game = session.get(Game, game_id)
+  if game is None:
+    raise HTTPException(status_code=404, detail='Jogo não encontrado')
+    
+  session.delete(game)
+  session.commit()
+    
+  return {"message": "Jogo deletado com sucesso", "game": game}
+
+@router.put('/edit/{game_id}', status_code=200)
+async def edit(
+  game_id: Annotated[int, Path(title='O ID do jogo a ser editado')],
+  game_update: GameUpdate,
+  session: Session = Depends(get_session)
+) -> dict:
+  """
+    Edita um jogo existente com base no ID fornecido e nos novos dados.
+
+    - **game_id**: O ID do jogo que deve ser editado, passado como parâmetro na URL.
+    - **game_update**: Dados a serem atualizados no jogo, fornecidos como um objeto `GameUpdate`.
+    - **session**: Dependência que fornece a sessão do banco de dados.
+    
+    Retorna uma mensagem de sucesso e os dados atualizados do jogo.
+
+    - Se o jogo com o `game_id` fornecido não for encontrado, retorna um erro 404.
 
     - **Exemplo de Requisição:**
-      ```http
-      DELETE /games/1
+      ```json
+      {
+        "title": "Counter-Strike: Global Offensive",
+        "description": "A tactical shooter game",
+        "release_date": "Aug 21, 2024"
+      }
       ```
 
     - **Exemplo de Resposta:**
       ```json
-      "Jogo deletado com sucesso."
+      {
+        "message": "Jogo editado com sucesso",
+        "game": {
+          "id": 1,
+          "title": "Counter-Strike: Global Offensive",
+          "description": "A tactical shooter game",
+          "release_date": "Aug 21, 2024"
+        }
+      }
       ```
-
-    - **Código de Status:**
-      - `204 No Content`: O jogo foi deletado com sucesso.
-      - `404 Not Found`: O jogo com o ID fornecido não foi encontrado.
-    """
-    game = session.get(Game, game_id)
-    if game is None:
-        raise HTTPException(status_code=404, detail='Jogo não encontrado')
+  """
+  
+  game = session.get(Game, game_id)
+  if game is None:
+    raise HTTPException(status_code=404, detail='Jogo não encontrado')
+  
+  if game_update.name is not None:
+    game.name = game_update.name
+  if game_update.price is not None:
+    game.price = game_update.price
+  if game_update.about is not None:
+    game.about = game_update.about
+  if game_update.metacritic_score is not None:
+    game.metacritic_score = game_update.metacritic_score
+  
+  session.commit()
+  session.refresh(game)
     
-    session.delete(game)
-    session.commit()
-    
-    return "Jogo deletado com sucesso."
-
+  return {"message": "Jogo editado com sucesso", "game": game}
