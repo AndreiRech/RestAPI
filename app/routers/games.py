@@ -6,6 +6,10 @@ from app.database.db import get_session
 
 router = APIRouter(prefix="/games", tags=["Games"])
 
+@router.get('/')
+def front():
+   return{ 'message': 'Bem vindo a API de jogos'}
+
 @router.get('', response_model=List[Game], status_code=200)
 async def games(
     session: Session = Depends(get_session)
