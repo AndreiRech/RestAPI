@@ -20,7 +20,7 @@ class Game(GameBase, table=True):
     id: int = Field(default=None, primary_key=True)
     
 class GameUpdate(SQLModel):
-    name: Optional[str]
-    price: Optional[float]
-    about: Optional[str]
-    metacritic_score: Optional[str]
+    name: Optional[str] = None
+    price: Optional[float]  = None
+    about: Optional[str]  = None
+    metacritic_score: Optional[int]  = None
