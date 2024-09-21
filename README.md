@@ -14,7 +14,7 @@ Criação de uma FastAPI com o objetivo de realizar operações em um conjunto d
 Outra ferramente muito importante é o gerenciador de pacotes do Python, o [Pip](https://pypi.org/project/pip/).
 
 
-# ⚙ INICIALIZAÇÃO
+# ⚙ INICIALIZAÇÃO APLICAÇÃO
 
 Para a realização do projeto, utilizamos alguns pacotes adicionais. Segue a baixo a lista de pacotes a serem instalados e seus comandos:
 
@@ -42,15 +42,19 @@ pip install sqlmodel
 
 Com tudo instalado, informe o comando para rodar a aplicação:
 ```
-uvicorn main:app --reload
+uvicorn app.main:app --reload
 ```
+
+# CONSUMINDO A API
+
+Para consumir a API, será necessário realizar algumas alterações
 
 # O QUE FAZER
 
 ### Parte 1
 - [X] Escolher conjunto de dados
 - [X] Tratar conjunto, removendo informações desnecessárias 
-- [] Criação da API que permite:
+- [X] Criação da API que permite:
     - [X] Consulta
     - [X] Atualização
     - [X] Inserção
@@ -61,7 +65,7 @@ uvicorn main:app --reload
     - [X] Exemplos de requisições
 
 ### Parte 3
-- [ ] Hospedar a API na web
+- [X] Hospedar a API na web
 
 ### Parte 4
-- [ ] Criação de um script Python que seja capaz de consumir todas as funcionalidades da API
+- [X] Criação de um script Python que seja capaz de consumir todas as funcionalidades da API
