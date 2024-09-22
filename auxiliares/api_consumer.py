@@ -1,6 +1,6 @@
 import requests
 
-BASE_URL = 'https://wilful-dolphin-goats-api-0dbdb292.koyeb.app/'
+BASE_URL = 'https://restapi-v1go.onrender.com/games'
 
 def get_all_games():
     response = requests.get(BASE_URL)
@@ -10,7 +10,7 @@ def get_all_games():
         return {"error": "Não foi possível obter os jogos."}
     
 def get_game_by_id(game_id):
-    response = requests.get(f"{BASE_URL}/{game_id}")
+    response = requests.get(f"{BASE_URL}/id/{game_id}")
     if response.status_code == 200:
         return response.json()
     else:
@@ -39,8 +39,8 @@ def create_game(game_data):
 
 def delete_game(game_id):
     response = requests.delete(f"{BASE_URL}/delete/{game_id}")
-    if response.status_code == 204:
-        return {"message": "Jogo deletado com sucesso."}
+    if response.status_code == 200:
+        return response.json()
     else:
         return {"error": "Erro ao deletar o jogo."}
 
@@ -78,19 +78,33 @@ def main():
     # print(get_all_games())
     
     # Get games/id/2264
-    print(get_game_by_id(2264))
+    print('Get games/id/\n')
+    print(get_game_by_id(2265))
+    print('\n')
     
     # Get games/name/Cuphead
+    print('Get games/name/\n')
     print(get_game_by_name('Cuphead'))
+    print('\n')
     
     # Get games/search/?q=Counter-Strike:
+    print('Get games/search/\n')
     print(search_games('Counter-Strike:'))
+    print('\n')
     
     # Post games/
+    print('Post games/\n')
     print(create_game(jogo))
+    print('\n')
         
     # Delete games/delete/2264
-    print(delete_game(2264))
+    print('Delete games/delete/\n')
+    print(delete_game(2265))
+    print('\n')
     
     # Patch games/edit/46160
+    print('Patch games/edit/\n')
     print(edit_game(46160, editar))
+    print('\n')
+    
+main()
