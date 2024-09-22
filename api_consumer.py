@@ -1,6 +1,6 @@
 import requests
 
-BASE_URL = 'https://rest-api-mauve-alpha.vercel.app/games'
+BASE_URL = 'https://wilful-dolphin-goats-api-0dbdb292.koyeb.app/'
 
 def get_all_games():
     response = requests.get(BASE_URL)
