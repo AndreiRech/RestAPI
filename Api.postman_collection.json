@@ -1,0 +1,412 @@
+{
+	"info": {
+		"_postman_id": "d77bcb93-cea8-4ee4-ab9a-6859c1e54485",
+		"name": "Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38514568"
+	},
+	"item": [
+		{
+			"name": "Retorna um jogo com base no ID fornecido.",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"description": "### GET /games/id/2264\n\nThis endpoint retrieves information about a specific game with the given ID.\n\n#### Request\n\nNo request body parameters are required for this endpoint.\n\n#### Response\n\nThe response will be a JSON object with the following properties:\n\n- `name` (string): The name of the game.\n    \n- `release_date` (string): The release date of the game.\n    \n- `estimated_owners` (string): The estimated number of game owners.\n    \n- `metacritic_score` (number): The Metacritic score of the game.\n    \n- `negative_rev` (number): The number of negative reviews for the game.\n    \n- `average_playtime` (number): The average playtime of the game.\n    \n- `genres` (string): The genres of the game.\n    \n- `id` (number): The ID of the game.\n    \n- `price` (number): The price of the game.\n    \n- `about` (string): Information about the game.\n    \n- `positive_rev` (number): The number of positive reviews for the game.\n    \n- `achievements` (number): The number of achievements available for the game.\n    \n- `categories` (string): The categories of the game.\n    \n- `tags` (string): The tags associated with the game.\n    \n\nExample response:\n\n``` json\n{\n    \"name\": \"The Witcher 3: Wild Hunt - Game of the Year Edition\",\n    \"release_date\": \"Aug 29, 2016\",\n    \"estimated_owners\": \"0 - 0\",\n    \"metacritic_score\": 0,\n    \"negative_rev\": 0,\n    \"average_playtime\": 0,\n    \"genres\": \"RPG\",\n    \"id\": 2264,\n    \"price\": 0.0,\n    \"about\": \"Game of the Year EDITION The Witcher 3: Wild Hunt Game of the Year edition brings together the base game and all the additional content released to date. Includes the Hearts of Stone and Blood & Wine expansions, which offer a massive 50 hours of additional storytelling as well as new features and new areas that expand the explorable world by over a third! Affords access to all additional content released so far, including weapons, armor, side quests, game modes and new GWENT cards! Features all technical and visual updates as well as a new user interface completely redesigned on the basis of feedback from members of the Witcher Community. Become a professional monster slayer and embark on an adventure of epic proportions! Upon its release, The Witcher 3: Wild Hunt became an instant classic, claiming over 250 Game of the Year awards. Now you can enjoy this huge, over 100-hour long, open-world adventure along with both its story-driven expansions worth an extra 50 hours of gameplay. This edition includes all additional content - new weapons, armor, companion outfits, new game mode and side quests. Play as a Highly Trained Monster Slayer for Hire Trained from early childhood and mutated to gain superhuman skills, strength and reflexes, witchers are a distrusted counterbalance to the monster-infested world in which they live. Gruesomely destroy foes as a professional monster hunter armed with a range of upgradeable weapons, mutating potions, and combat magic. Hunt down a wide variety of exotic monsters, from savage beasts prowling mountain passes to cunning supernatural predators lurking in the shadowy back alleys of densely populated cities. Invest your rewards to upgrade your weaponry and buy custom armor, or spend them on horse races, card games, fist fighting and other pleasures life brings. Track Down the Child of Prophecy in a Morally Ambiguous Fantasy Open World Built for endless adventure, the massive open world of The Witcher sets new standards in terms of size, depth and complexity. Traverse a fantastical open world: explore forgotten ruins, caves and shipwrecks, trade with merchants and dwarven smiths in cities, and hunt across open plains, amidst mountains and at sea. In a time of war, track down the child of prophecy, a living weapon of great power whose coming was foretold in ancient elven legends. Make choices that go beyond good and evil and face their far-reaching consequences.\",\n    \"positive_rev\": 0,\n    \"achievements\": 78,\n    \"categories\": \"Single-player,Steam Achievements,Full controller support,Steam Trading Cards,Steam Cloud\",\n    \"tags\": \"\"\n}\n\n ```"
+			},
+			"response": [
+				{
+					"name": "Retorno por ID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/games/id/2264",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"games",
+								"id",
+								"2264"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Sun, 22 Sep 2024 21:58:59 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "2812"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"The Witcher 3: Wild Hunt - Game of the Year Edition\",\n    \"release_date\": \"Aug 29, 2016\",\n    \"estimated_owners\": \"0 - 0\",\n    \"metacritic_score\": 0,\n    \"negative_rev\": 0,\n    \"average_playtime\": 0,\n    \"genres\": \"RPG\",\n    \"id\": 2264,\n    \"price\": 0,\n    \"about\": \"Game of the Year EDITION The Witcher 3: Wild Hunt Game of the Year edition brings together the base game and all the additional content released to date. Includes the Hearts of Stone and Blood &amp; Wine expansions, which offer a massive 50 hours of additional storytelling as well as new features and new areas that expand the explorable world by over a third! Affords access to all additional content released so far, including weapons, armor, side quests, game modes and new GWENT cards! Features all technical and visual updates as well as a new user interface completely redesigned on the basis of feedback from members of the Witcher Community. Become a professional monster slayer and embark on an adventure of epic proportions! Upon its release, The Witcher 3: Wild Hunt became an instant classic, claiming over 250 Game of the Year awards. Now you can enjoy this huge, over 100-hour long, open-world adventure along with both its story-driven expansions worth an extra 50 hours of gameplay. This edition includes all additional content - new weapons, armor, companion outfits, new game mode and side quests. Play as a Highly Trained Monster Slayer for Hire Trained from early childhood and mutated to gain superhuman skills, strength and reflexes, witchers are a distrusted counterbalance to the monster-infested world in which they live. Gruesomely destroy foes as a professional monster hunter armed with a range of upgradeable weapons, mutating potions, and combat magic. Hunt down a wide variety of exotic monsters, from savage beasts prowling mountain passes to cunning supernatural predators lurking in the shadowy back alleys of densely populated cities. Invest your rewards to upgrade your weaponry and buy custom armor, or spend them on horse races, card games, fist fighting and other pleasures life brings. Track Down the Child of Prophecy in a Morally Ambiguous Fantasy Open World Built for endless adventure, the massive open world of The Witcher sets new standards in terms of size, depth and complexity. Traverse a fantastical open world: explore forgotten ruins, caves and shipwrecks, trade with merchants and dwarven smiths in cities, and hunt across open plains, amidst mountains and at sea. In a time of war, track down the child of prophecy, a living weapon of great power whose coming was foretold in ancient elven legends. Make choices that go beyond good and evil and face their far-reaching consequences.\",\n    \"positive_rev\": 0,\n    \"achievements\": 78,\n    \"categories\": \"Single-player,Steam Achievements,Full controller support,Steam Trading Cards,Steam Cloud\",\n    \"tags\": \"\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Deleta um jogo com base no ID fornecido.",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"description": "### DELETE /games/delete/10\n\nDeletes a game with the specified ID.\n\n#### Request Body\n\nThis request does not require a request body.\n\n#### Response\n\nThe response is in JSON format and has the following schema:\n\n``` json\n{\n    \"message\": \"Jogo deletado com sucesso\",\n    \"game\": {\n        \"name\": \"Deadlings: Rotten Edition\",\n        \"release_date\": \"Nov 11, 2014\",\n        \"estimated_owners\": \"50000 - 100000\",\n        \"metacritic_score\": 0,\n        \"negative_rev\": 45,\n        \"average_playtime\": 703,\n        \"genres\": \"Action,Adventure,Indie\",\n        \"id\": 10,\n        \"price\": 3.99,\n        \"about\": \"Death is lonely. He has zero friends on his FaceTome account and no one to hang out with. So, in order to feel better he begins “Project Deadlings”. Death buys a factory where he can build his laboratory and begin training a massive army of zombie minions. As the army of Deadlings grows, the mazes of the laboratory become deadlier, loaded with puzzles and death-defying traps. Different Deadlings have their own unique abilities: Bonesack is agile - he can run and jump, Creep can climb on walls and ceilings, Lazybrain treads slowly but carefully and Stencher... well Stencher has gastric problems so he can use his powerful gas clouds to fly. You will have to combine all of these abilities to find your way in Death's Maze. Can you help Death to kill his boredom? Will you be able to navigate all 60+ levels available in Deadlings? Will you complete Project Deadlings, and successfully train all of your zombie minions? Arcade side-scroller with strategy elements! Four different types of zombie minions with unique abilities! 70 levels of pure zombie gore fun! Additional game mode - Nightmare - only for the hardcore gamers! What's new in the Rotten Edition? 10 brand new bonus levels 15 new levels in Nightmare Mode Steam achievements and leaderboards Full controller support Nightmare mode unlocked from the beginning Steam Trading Cards and Badges HD graphics\",\n        \"positive_rev\": 225,\n        \"achievements\": 32,\n        \"categories\": \"Single-player,Steam Achievements,Steam Trading Cards,Partial Controller Support,Steam Cloud\",\n        \"tags\": \"Action,Indie,Adventure,Puzzle-Platformer,Arcade,Zombies\"\n    }\n}\n\n ```"
+			},
+			"response": [
+				{
+					"name": "Jogo deletado pelo ID",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/games/delete/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"games",
+								"delete",
+								"10"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Sun, 22 Sep 2024 22:00:33 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "1859"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Jogo deletado com sucesso\",\n    \"game\": {\n        \"name\": \"Deadlings: Rotten Edition\",\n        \"release_date\": \"Nov 11, 2014\",\n        \"estimated_owners\": \"50000 - 100000\",\n        \"metacritic_score\": 0,\n        \"negative_rev\": 45,\n        \"average_playtime\": 703,\n        \"genres\": \"Action,Adventure,Indie\",\n        \"id\": 10,\n        \"price\": 3.99,\n        \"about\": \"Death is lonely. He has zero friends on his FaceTome account and no one to hang out with. So, in order to feel better he begins “Project Deadlings”. Death buys a factory where he can build his laboratory and begin training a massive army of zombie minions. As the army of Deadlings grows, the mazes of the laboratory become deadlier, loaded with puzzles and death-defying traps. Different Deadlings have their own unique abilities: Bonesack is agile - he can run and jump, Creep can climb on walls and ceilings, Lazybrain treads slowly but carefully and Stencher... well Stencher has gastric problems so he can use his powerful gas clouds to fly. You will have to combine all of these abilities to find your way in Death's Maze. Can you help Death to kill his boredom? Will you be able to navigate all 60+ levels available in Deadlings? Will you complete Project Deadlings, and successfully train all of your zombie minions? Arcade side-scroller with strategy elements! Four different types of zombie minions with unique abilities! 70 levels of pure zombie gore fun! Additional game mode - Nightmare - only for the hardcore gamers! What's new in the Rotten Edition? 10 brand new bonus levels 15 new levels in Nightmare Mode Steam achievements and leaderboards Full controller support Nightmare mode unlocked from the beginning Steam Trading Cards and Badges HD graphics\",\n        \"positive_rev\": 225,\n        \"achievements\": 32,\n        \"categories\": \"Single-player,Steam Achievements,Steam Trading Cards,Partial Controller Support,Steam Cloud\",\n        \"tags\": \"Action,Indie,Adventure,Puzzle-Platformer,Arcade,Zombies\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Patch",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"description": "### Edit Game Details\n\nThis endpoint allows the client to update the details of a specific game.\n\n#### Request Body\n\n- `name` (string, optional): The updated name of the game.\n    \n- `about` (string, optional): A brief description of the game.\n    \n- `release_date` (string, optional): The updated release date of the game.\n    \n\n#### Response\n\nThe response is in JSON format and has the following schema:\n\n``` json\n{\n    \"message\": \"Jogo editado com sucesso\",\n    \"game\": {\n        \"name\": \"Counter-Strike: Global Offensive\",\n        \"release_date\": \"May 31, 2021\",\n        \"estimated_owners\": \"0 - 20000\",\n        \"metacritic_score\": 0,\n        \"negative_rev\": 2,\n        \"average_playtime\": 0,\n        \"genres\": \"Action,Casual\",\n        \"id\": 46160,\n        \"price\": 8.99,\n        \"about\": \"Jogo de dar bala\",\n        \"positive_rev\": 0,\n        \"achievements\": 6,\n        \"categories\": \"Multi-player,PvP,Online PvP,Steam Achievements,Full controller support,Stats\",\n        \"tags\": \"Action,Casual,Flight,Multiplayer,Arcade,Character Customization,3D,Colorful,PvP,Side Scroller,Combat\"\n    }\n}\n\n ```"
+			},
+			"response": [
+				{
+					"name": "Editando jogo",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Counter-Strike: Global Offensive\",\r\n  \"about\": \"Jogo de dar bala\",\r\n  \"release_date\": \"Aug 21, 2024\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/games/edit/46160",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"games",
+								"edit",
+								"46160"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Sun, 22 Sep 2024 22:03:14 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "521"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Jogo editado com sucesso\",\n    \"game\": {\n        \"name\": \"Counter-Strike: Global Offensive\",\n        \"release_date\": \"May 31, 2021\",\n        \"estimated_owners\": \"0 - 20000\",\n        \"metacritic_score\": 0,\n        \"negative_rev\": 2,\n        \"average_playtime\": 0,\n        \"genres\": \"Action,Casual\",\n        \"id\": 46160,\n        \"price\": 8.99,\n        \"about\": \"Jogo de dar bala\",\n        \"positive_rev\": 0,\n        \"achievements\": 6,\n        \"categories\": \"Multi-player,PvP,Online PvP,Steam Achievements,Full controller support,Stats\",\n        \"tags\": \"Action,Casual,Flight,Multiplayer,Arcade,Character Customization,3D,Colorful,PvP,Side Scroller,Combat\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Cria um novo jogo com base nos dados fornecidos.",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"description": "### Add New Game\n\nThis endpoint allows you to add a new game to the database.\n\n#### Request Body\n\n- `name` (string): The name of the game.\n    \n- `release_date` (string): The release date of the game.\n    \n- `estimated_owners` (string): The estimated number of owners of the game.\n    \n- `price` (number): The price of the game.\n    \n- `about` (string): Description about the game.\n    \n- `metacritic_score` (number): The Metacritic score of the game.\n    \n- `positive_rev` (number): The number of positive reviews for the game.\n    \n- `negative_rev` (number): The number of negative reviews for the game.\n    \n- `achievements` (number): The number of achievements in the game.\n    \n- `average_playtime` (number): The average playtime of the game.\n    \n- `categories` (string): Categories of the game.\n    \n- `genres` (string): Genres of the game.\n    \n- `tags` (string): Tags associated with the game.\n    \n\n#### Response\n\n- `name` (string): The name of the added game.\n    \n- `release_date` (string): The release date of the added game.\n    \n- `estimated_owners` (string): The estimated number of owners of the added game.\n    \n- `price` (number): The price of the added game.\n    \n- `about` (string): Description about the added game.\n    \n- `metacritic_score` (number): The Metacritic score of the added game.\n    \n- `positive_rev` (number): The number of positive reviews for the added game.\n    \n- `negative_rev` (number): The number of negative reviews for the added game.\n    \n- `achievements` (number): The number of achievements in the added game.\n    \n- `average_playtime` (number): The average playtime of the added game.\n    \n- `categories` (string): Categories of the added game.\n    \n- `genres` (string): Genres of the added game.\n    \n- `tags` (string): Tags associated with the added game.\n    \n- `id` (number): The unique identifier of the added game.\n    \n\n#### Example\n\n``` json\n{\n    \"name\": \"Example Game\",\n    \"release_date\": \"2022-01-01\",\n    \"estimated_owners\": \"1000000\",\n    \"price\": 49.99,\n    \"about\": \"This is an example game.\",\n    \"metacritic_score\": 85,\n    \"positive_rev\": 1500,\n    \"negative_rev\": 200,\n    \"achievements\": 30,\n    \"average_playtime\": 40,\n    \"categories\": \"Action, Adventure\",\n    \"genres\": \"RPG\",\n    \"tags\": \"Single Player, Open World\"\n}\n\n ```"
+			},
+			"response": [
+				{
+					"name": "Jogo criado",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Counter-Strike\",\r\n  \"release_date\": \"Aug 20, 2024\",\r\n  \"estimated_owners\": \"10 - 2000\",\r\n  \"price\": 59.99,\r\n  \"about\": \"A popular tactical shooter game.\",\r\n  \"metacritic_score\": 85,\r\n  \"positive_rev\": 15000,\r\n  \"negative_rev\": 500,\r\n  \"achievements\": 50,\r\n  \"average_playtime\": 120,\r\n  \"categories\": \"Shooter\",\r\n  \"genres\": \"Action\",\r\n  \"tags\": \"multiplayer, tactical\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/games",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"games"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Sun, 22 Sep 2024 22:07:27 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "329"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"Counter-Strike\",\n    \"release_date\": \"Aug 20, 2024\",\n    \"estimated_owners\": \"10 - 2000\",\n    \"metacritic_score\": 85,\n    \"negative_rev\": 500,\n    \"average_playtime\": 120,\n    \"genres\": \"Action\",\n    \"id\": 46504,\n    \"price\": 59.99,\n    \"about\": \"A popular tactical shooter game.\",\n    \"positive_rev\": 15000,\n    \"achievements\": 50,\n    \"categories\": \"Shooter\",\n    \"tags\": \"multiplayer, tactical\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Edita um jogo existente com base no ID fornecido e nos novos dados.",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"description": "### Update Game Details\n\nThis endpoint allows the user to update the details of a specific game.\n\n#### Request Body\n\n- `name` (string, optional): The name of the game.\n    \n- `about` (string, optional): Description about the game.\n    \n- `release_date` (string, optional): The release date of the game.\n    \n\n#### Response (200 - OK)\n\nThe response will be a JSON object with the following properties:\n\n``` json\n{\n    \"message\": \"Jogo editado com sucesso\",\n    \"game\": {\n        \"name\": \"Counter-Strike: Global Offensive\",\n        \"release_date\": \"May 31, 2021\",\n        \"estimated_owners\": \"0 - 20000\",\n        \"metacritic_score\": 0,\n        \"negative_rev\": 2,\n        \"average_playtime\": 0,\n        \"genres\": \"Action,Casual\",\n        \"id\": 46160,\n        \"price\": 8.99,\n        \"about\": \"Jogo de dar bala\",\n        \"positive_rev\": 0,\n        \"achievements\": 6,\n        \"categories\": \"Multi-player,PvP,Online PvP,Steam Achievements,Full controller support,Stats\",\n        \"tags\": \"Action,Casual,Flight,Multiplayer,Arcade,Character Customization,3D,Colorful,PvP,Side Scroller,Combat\"\n    }\n}\n\n ```\n\n#### JSON Schema\n\n``` json\n{\n    \"message\": \"Jogo editado com sucesso\",\n    \"game\": {\n        \"name\": \"Counter-Strike: Global Offensive\",\n        \"release_date\": \"May 31, 2021\",\n        \"estimated_owners\": \"0 - 20000\",\n        \"metacritic_score\": 0,\n        \"negative_rev\": 2,\n        \"average_playtime\": 0,\n        \"genres\": \"Action,Casual\",\n        \"id\": 46160,\n        \"price\": 8.99,\n        \"about\": \"Jogo de dar bala\",\n        \"positive_rev\": 0,\n        \"achievements\": 6,\n        \"categories\": \"Multi-player,PvP,Online PvP,Steam Achievements,Full controller support,Stats\",\n        \"tags\": \"Action,Casual,Flight,Multiplayer,Arcade,Character Customization,3D,Colorful,PvP,Side Scroller,Combat\"\n    }\n}\n\n ```"
+			},
+			"response": [
+				{
+					"name": "Jogo editado",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Counter-Strike: Global Offensive\",\r\n  \"about\": \"Jogo de dar bala\",\r\n  \"release_date\": \"Aug 21, 2024\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/games/edit/46160",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"games",
+								"edit",
+								"46160"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Sun, 22 Sep 2024 22:10:36 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "521"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Jogo editado com sucesso\",\n    \"game\": {\n        \"name\": \"Counter-Strike: Global Offensive\",\n        \"release_date\": \"May 31, 2021\",\n        \"estimated_owners\": \"0 - 20000\",\n        \"metacritic_score\": 0,\n        \"negative_rev\": 2,\n        \"average_playtime\": 0,\n        \"genres\": \"Action,Casual\",\n        \"id\": 46160,\n        \"price\": 8.99,\n        \"about\": \"Jogo de dar bala\",\n        \"positive_rev\": 0,\n        \"achievements\": 6,\n        \"categories\": \"Multi-player,PvP,Online PvP,Steam Achievements,Full controller support,Stats\",\n        \"tags\": \"Action,Casual,Flight,Multiplayer,Arcade,Character Customization,3D,Colorful,PvP,Side Scroller,Combat\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Retorna uma lista de jogos que correspondem à busca realizada na query.",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"description": "The API returns a JSON response with the following schema:\n\n``` json\n[\n    {\n        \"name\": \"Counter-Strike: Condition Zero\",\n        \"release_date\": \"Mar 1, 2004\",\n        \"estimated_owners\": \"5000000 - 10000000\",\n        \"metacritic_score\": 65,\n        \"negative_rev\": 1871,\n        \"average_playtime\": 1523,\n        \"genres\": \"Action\",\n        \"id\": 9908,\n        \"price\": 9.99,\n        \"about\": \"With its extensive Tour of Duty campaign, a near-limitless number of skirmish modes, updates and new content for Counter-Strike's award-winning multiplayer game play, plus over 12 bonus single player missions, Counter-Strike: Condition Zero is a tremendous offering of single and multiplayer content.\",\n        \"positive_rev\": 19314,\n        \"achievements\": 0,\n        \"categories\": \"Single-player,Multi-player,Valve Anti-Cheat enabled\",\n        \"tags\": \"Action,FPS,Shooter,Multiplayer,First-Person,Singleplayer,Classic,Tactical,Team-Based,Competitive,Military,Strategy,Online Co-Op,Adventure,Survival,Atmospheric,Open World,Old School,Simulation,Dark\"\n    },\n    {\n        \"name\": \"Counter-Strike: Source\",\n        \"release_date\": \"Nov 1, 2004\",\n        \"estimated_owners\": \"10000000 - 20000000\",\n        \"metacritic_score\": 88,\n        \"negative_rev\": 5348,\n        \"average_playtime\": 9171,\n        \"genres\": \"Action\",\n        \"id\": 21611,\n        \"price\": 9.99,\n        \"about\": \"THE NEXT INSTALLMENT OF THE WORLD'S # 1 ONLINE ACTION GAME Counter-Strike: Source blends Counter-Strike's award-winning teamplay action with the advanced technology of Source™ technology. Featuring state of the art graphics, all new sounds, and introducing physics, Counter-Strike: Source is a must-have for every action gamer.\",\n        \"positive_rev\": 135151,\n        \"achievements\": 147,\n        \"categories\": \"Multi-player,Cross-Platform Multiplayer,Steam Achievements,Steam Cloud,Valve Anti-Cheat enabled,Stats,Includes Source SDK\",\n        \"tags\": \"Shooter,Action,FPS,Multiplayer,Team-Based,First-Person,Tactical,Competitive,PvP,e-sports,Military,War,Strategy,Moddable,Singleplayer,Difficult,Atmospheric,Survival,Simulation,Sandbox\"\n    },\n    {\n        \"name\": \"Counter-Strike: Condition Zero\",\n        \"release_date\": \"Mar 1, 2004\",\n        \"estimated_owners\": \"10000000 - 20000000\",\n        \"metacritic_score\": 65,\n        \"negative_rev\": 1535,\n        \"average_playtime\": 1321,\n        \"genres\": \"Action\",\n        \"id\": 40951,\n        \"price\": 9.99,\n        \"about\": \"With its extensive Tour of Duty campaign, a near-limitless number of skirmish modes, updates and new content for Counter-Strike's award-winning multiplayer game play, plus over 12 bonus single player missions, Counter-Strike: Condition Zero is a tremendous offering of single and multiplayer content.\",\n        \"positive_rev\": 13442,\n        \"achievements\": 0,\n        \"categories\": \"Single-player,Multi-player,Valve Anti-Cheat enabled\",\n        \"tags\": \"Action,FPS,Shooter,Multiplayer,First-Person,Classic,Singleplayer,Tactical,Team-Based,Competitive,Strategy,Online Co-Op,Military,Masterpiece,Adventure,Survival,Atmospheric,Open World,Simulation,Dark\"\n    },\n    {\n        \"name\": \"Counter-Strike: Global Offensive\",\n        \"release_date\": \"Aug 21, 2012\",\n        \"estimated_owners\": \"50000000 - 100000000\",\n        \"metacritic_score\": 83,\n        \"negative_rev\": 766677,\n        \"average_playtime\": 30484,\n        \"genres\": \"Action,Free to Play\",\n        \"id\": 46159,\n        \"price\": 0.0,\n        \"about\": \"Counter-Strike: Global Offensive (CS: GO) expands upon the team-based action gameplay that it pioneered when it was launched 19 years ago. CS: GO features new maps, characters, weapons, and game modes, and delivers updated versions of the classic CS content (de_dust2, etc.). 'Counter-Strike took the gaming industry by surprise when the unlikely MOD became the most played online PC action game in the world almost immediately after its release in August 1999,' said Doug Lombardi at Valve. 'For the past 12 years, it has continued to be one of the most-played games in the world, headline competitive gaming tournaments and selling over 25 million units worldwide across the franchise. CS: GO promises to expand on CS' award-winning gameplay and deliver it to gamers on the PC as well as the next gen consoles and the Mac.'\",\n        \"positive_rev\": 5764420,\n        \"achievements\": 167,\n        \"categories\": \"Multi-player,Steam Achievements,Full controller support,Steam Trading Cards,Steam Workshop,In-App Purchases,Valve Anti-Cheat enabled,Stats,Remote Play on Phone,Remote Play on Tablet,Remote Play on TV\",\n        \"tags\": \"FPS,Shooter,Multiplayer,Competitive,Action,Team-Based,e-sports,Tactical,First-Person,PvP,Online Co-Op,Co-op,Strategy,Military,War,Difficult,Trading,Realistic,Fast-Paced,Moddable\"\n    },\n    {\n        \"name\": \"Counter-Strike: Global Offensive\",\n        \"release_date\": \"May 31, 2021\",\n        \"estimated_owners\": \"0 - 20000\",\n        \"metacritic_score\": 0,\n        \"negative_rev\": 2,\n        \"average_playtime\": 0,\n        \"genres\": \"Action,Casual\",\n        \"id\": 46160,\n        \"price\": 8.99,\n        \"about\": \"Jogo de dar bala\",\n        \"positive_rev\": 0,\n        \"achievements\": 6,\n        \"categories\": \"Multi-player,PvP,Online PvP,Steam Achievements,Full controller support,Stats\",\n        \"tags\": \"Action,Casual,Flight,Multiplayer,Arcade,Character Customization,3D,Colorful,PvP,Side Scroller,Combat\"\n    }\n]\n\n ```"
+			},
+			"response": [
+				{
+					"name": "Lista de todos os jogos",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/games/search/?q=Counter-Strike%3A\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"games",
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "Counter-Strike%3A\n"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Sun, 22 Sep 2024 22:17:49 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "4605"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"name\": \"Counter-Strike: Condition Zero\",\n        \"release_date\": \"Mar 1, 2004\",\n        \"estimated_owners\": \"5000000 - 10000000\",\n        \"metacritic_score\": 65,\n        \"negative_rev\": 1871,\n        \"average_playtime\": 1523,\n        \"genres\": \"Action\",\n        \"id\": 9908,\n        \"price\": 9.99,\n        \"about\": \"With its extensive Tour of Duty campaign, a near-limitless number of skirmish modes, updates and new content for Counter-Strike's award-winning multiplayer game play, plus over 12 bonus single player missions, Counter-Strike: Condition Zero is a tremendous offering of single and multiplayer content.\",\n        \"positive_rev\": 19314,\n        \"achievements\": 0,\n        \"categories\": \"Single-player,Multi-player,Valve Anti-Cheat enabled\",\n        \"tags\": \"Action,FPS,Shooter,Multiplayer,First-Person,Singleplayer,Classic,Tactical,Team-Based,Competitive,Military,Strategy,Online Co-Op,Adventure,Survival,Atmospheric,Open World,Old School,Simulation,Dark\"\n    },\n    {\n        \"name\": \"Counter-Strike: Source\",\n        \"release_date\": \"Nov 1, 2004\",\n        \"estimated_owners\": \"10000000 - 20000000\",\n        \"metacritic_score\": 88,\n        \"negative_rev\": 5348,\n        \"average_playtime\": 9171,\n        \"genres\": \"Action\",\n        \"id\": 21611,\n        \"price\": 9.99,\n        \"about\": \"THE NEXT INSTALLMENT OF THE WORLD'S # 1 ONLINE ACTION GAME Counter-Strike: Source blends Counter-Strike's award-winning teamplay action with the advanced technology of Source&trade; technology. Featuring state of the art graphics, all new sounds, and introducing physics, Counter-Strike: Source is a must-have for every action gamer.\",\n        \"positive_rev\": 135151,\n        \"achievements\": 147,\n        \"categories\": \"Multi-player,Cross-Platform Multiplayer,Steam Achievements,Steam Cloud,Valve Anti-Cheat enabled,Stats,Includes Source SDK\",\n        \"tags\": \"Shooter,Action,FPS,Multiplayer,Team-Based,First-Person,Tactical,Competitive,PvP,e-sports,Military,War,Strategy,Moddable,Singleplayer,Difficult,Atmospheric,Survival,Simulation,Sandbox\"\n    },\n    {\n        \"name\": \"Counter-Strike: Condition Zero\",\n        \"release_date\": \"Mar 1, 2004\",\n        \"estimated_owners\": \"10000000 - 20000000\",\n        \"metacritic_score\": 65,\n        \"negative_rev\": 1535,\n        \"average_playtime\": 1321,\n        \"genres\": \"Action\",\n        \"id\": 40951,\n        \"price\": 9.99,\n        \"about\": \"With its extensive Tour of Duty campaign, a near-limitless number of skirmish modes, updates and new content for Counter-Strike's award-winning multiplayer game play, plus over 12 bonus single player missions, Counter-Strike: Condition Zero is a tremendous offering of single and multiplayer content.\",\n        \"positive_rev\": 13442,\n        \"achievements\": 0,\n        \"categories\": \"Single-player,Multi-player,Valve Anti-Cheat enabled\",\n        \"tags\": \"Action,FPS,Shooter,Multiplayer,First-Person,Classic,Singleplayer,Tactical,Team-Based,Competitive,Strategy,Online Co-Op,Military,Masterpiece,Adventure,Survival,Atmospheric,Open World,Simulation,Dark\"\n    },\n    {\n        \"name\": \"Counter-Strike: Global Offensive\",\n        \"release_date\": \"Aug 21, 2012\",\n        \"estimated_owners\": \"50000000 - 100000000\",\n        \"metacritic_score\": 83,\n        \"negative_rev\": 766677,\n        \"average_playtime\": 30484,\n        \"genres\": \"Action,Free to Play\",\n        \"id\": 46159,\n        \"price\": 0,\n        \"about\": \"Counter-Strike: Global Offensive (CS: GO) expands upon the team-based action gameplay that it pioneered when it was launched 19 years ago. CS: GO features new maps, characters, weapons, and game modes, and delivers updated versions of the classic CS content (de_dust2, etc.). 'Counter-Strike took the gaming industry by surprise when the unlikely MOD became the most played online PC action game in the world almost immediately after its release in August 1999,' said Doug Lombardi at Valve. 'For the past 12 years, it has continued to be one of the most-played games in the world, headline competitive gaming tournaments and selling over 25 million units worldwide across the franchise. CS: GO promises to expand on CS' award-winning gameplay and deliver it to gamers on the PC as well as the next gen consoles and the Mac.'\",\n        \"positive_rev\": 5764420,\n        \"achievements\": 167,\n        \"categories\": \"Multi-player,Steam Achievements,Full controller support,Steam Trading Cards,Steam Workshop,In-App Purchases,Valve Anti-Cheat enabled,Stats,Remote Play on Phone,Remote Play on Tablet,Remote Play on TV\",\n        \"tags\": \"FPS,Shooter,Multiplayer,Competitive,Action,Team-Based,e-sports,Tactical,First-Person,PvP,Online Co-Op,Co-op,Strategy,Military,War,Difficult,Trading,Realistic,Fast-Paced,Moddable\"\n    },\n    {\n        \"name\": \"Counter-Strike: Global Offensive\",\n        \"release_date\": \"May 31, 2021\",\n        \"estimated_owners\": \"0 - 20000\",\n        \"metacritic_score\": 0,\n        \"negative_rev\": 2,\n        \"average_playtime\": 0,\n        \"genres\": \"Action,Casual\",\n        \"id\": 46160,\n        \"price\": 8.99,\n        \"about\": \"Jogo de dar bala\",\n        \"positive_rev\": 0,\n        \"achievements\": 6,\n        \"categories\": \"Multi-player,PvP,Online PvP,Steam Achievements,Full controller support,Stats\",\n        \"tags\": \"Action,Casual,Flight,Multiplayer,Arcade,Character Customization,3D,Colorful,PvP,Side Scroller,Combat\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Retorna um jogo com base no nome fornecido.",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"description": "### GET /games/name/{game_name}\n\nThis endpoint retrieves information about a specific game by its name.\n\n#### Request\n\nNo request body is required for this endpoint.\n\n- Path Parameters\n    \n    - game_name: (string) The name of the game.\n        \n\n#### Response\n\nThe response will be a JSON object with the following properties:\n\n- name: (string) The name of the game.\n    \n- release_date: (string) The release date of the game.\n    \n- estimated_owners: (string) The estimated number of owners of the game.\n    \n- metacritic_score: (number) The Metacritic score of the game.\n    \n- negative_rev: (number) The number of negative reviews for the game.\n    \n- average_playtime: (number) The average playtime of the game.\n    \n- genres: (string) The genres of the game.\n    \n- id: (number) The unique identifier of the game.\n    \n- price: (number) The price of the game.\n    \n- about: (string) Information about the game.\n    \n- positive_rev: (number) The number of positive reviews for the game.\n    \n- achievements: (number) The number of achievements in the game.\n    \n- categories: (string) The categories of the game.\n    \n- tags: (string) The tags associated with the game.\n    \n\n#### Example\n\n``` json\n{\n    \"name\": \"\",\n    \"release_date\": \"\",\n    \"estimated_owners\": \"\",\n    \"metacritic_score\": 0,\n    \"negative_rev\": 0,\n    \"average_playtime\": 0,\n    \"genres\": \"\",\n    \"id\": 0,\n    \"price\": 0,\n    \"about\": \"\",\n    \"positive_rev\": 0,\n    \"achievements\": 0,\n    \"categories\": \"\",\n    \"tags\": \"\"\n}\n\n ```"
+			},
+			"response": [
+				{
+					"name": "Jogo retornado",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/games/name/Cuphead",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"games",
+								"name",
+								"Cuphead"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Sun, 22 Sep 2024 22:21:12 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "1221"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"Cuphead\",\n    \"release_date\": \"Sep 29, 2017\",\n    \"estimated_owners\": \"2000000 - 5000000\",\n    \"metacritic_score\": 88,\n    \"negative_rev\": 3869,\n    \"average_playtime\": 763,\n    \"genres\": \"Action,Indie\",\n    \"id\": 3812,\n    \"price\": 19.99,\n    \"about\": \"Cuphead is a classic run and gun action game heavily focused on boss battles. Inspired by cartoons of the 1930s, the visuals and audio are painstakingly created with the same techniques of the era, i.e. traditional hand drawn cel animation, watercolor backgrounds, and original jazz recordings. Play as Cuphead or Mugman (in single player or local co-op) as you traverse strange worlds, acquire new weapons, learn powerful super moves, and discover hidden secrets while you try to pay your debt back to the devil!\",\n    \"positive_rev\": 107896,\n    \"achievements\": 42,\n    \"categories\": \"Single-player,Multi-player,Co-op,Shared/Split Screen Co-op,Shared/Split Screen,Steam Achievements,Full controller support,Steam Trading Cards,Steam Cloud,Remote Play on Phone,Remote Play on Tablet,Remote Play on TV,Remote Play Together\",\n    \"tags\": \"Difficult,Cartoon,Platformer,Co-op,Great Soundtrack,Local Co-Op,2D,Hand-drawn,Multiplayer,Indie,Retro,Cartoony,Bullet Hell,Action,Shoot 'Em Up,Side Scroller,Singleplayer,Colorful,Funny,Atmospheric\"\n}"
+				}
+			]
+		}
+	]
+}
