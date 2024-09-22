@@ -1,6 +1,6 @@
 import requests
 
-BASE_URL = 'https://educational-armadillo-goat-api-7aa7423b.koyeb.app/games'
+BASE_URL = 'https://rest-api-mauve-alpha.vercel.app/games'
 
 def get_all_games():
     response = requests.get(BASE_URL)
@@ -38,8 +38,8 @@ def create_game(game_data):
         return {"error": "Erro ao criar o jogo."}
 
 def delete_game(game_id):
-    response = requests.delete(f"{BASE_URL}/{game_id}")
-    if response.status_code == 204:  # Sem conteúdo para sucesso na deleção
+    response = requests.delete(f"{BASE_URL}/delete/{game_id}")
+    if response.status_code == 204:
         return {"message": "Jogo deletado com sucesso."}
     else:
         return {"error": "Erro ao deletar o jogo."}
@@ -51,28 +51,46 @@ def edit_game(game_id, game_data):
     else:
         return {"error": "Erro ao editar o jogo."}
 
-new_game = {
-  "name": "Counter-Strike 800",
-  "release_date": "Aug 20, 2024",
-  "estimated_owners": "10 - 2000",
-  "price": 59.99,
-  "about": "A popular tactical shooter game.",
-  "metacritic_score": 85,
-  "positive_rev": 15000,
-  "negative_rev": 500,
-  "achievements": 50,
-  "average_playtime": 120,
-  "categories": "Shooter",
-  "genres": "Action",
-  "tags": "multiplayer, tactical"
-}
+def main():
+    jogo = {
+        "name": "Counter-Strike 800",
+        "release_date": "Aug 20, 2024",
+        "estimated_owners": "10 - 2000",
+        "price": 59.99,
+        "about": "A popular tactical shooter game.",
+        "metacritic_score": 85,
+        "positive_rev": 15000,
+        "negative_rev": 500,
+        "achievements": 50,
+        "average_playtime": 120,
+        "categories": "Shooter",
+        "genres": "Action",
+        "tags": "multiplayer, tactical"
+    }
     
-print(create_game(new_game))
+    editar = {
+        "name": "Counter-Strike: Global Offensive",
+        "about": "Jogo de dar bala",
+        "release_date": "Aug 21, 2024"
+    }
     
-print(get_game_by_name("Cuphead"))
-
-print(get_game_by_id(2264))
-
-print(delete_game(2264))
-
-# print(get_all_games())
+    # Get games/
+    # print(get_all_games())
+    
+    # Get games/id/2264
+    print(get_game_by_id(2264))
+    
+    # Get games/name/Cuphead
+    print(get_game_by_name('Cuphead'))
+    
+    # Get games/search/?q=Counter-Strike:
+    print(search_games('Counter-Strike:'))
+    
+    # Post games/
+    print(create_game(jogo))
+        
+    # Delete games/delete/2264
+    print(delete_game(2264))
+    
+    # Patch games/edit/46160
+    print(edit_game(46160, editar))
