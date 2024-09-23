@@ -47,7 +47,11 @@ uvicorn app.main:app --reload
 
 # CONSUMINDO A API
 
-Para consumir a API, será necessário realizar algumas alterações
+Para consumir a API, será necessário realizar acessar o arquivo **api_consumer.py**, localizado dentro da pasta *auxiliares*.
+
+Ao acessar, o [link para a api](https://restapi-v1go.onrender.com/games) estará como variável e será necessário apenas rodar o código. 
+
+Porém, saiba que o primeiro acesso demora em torno de 1 minuto para a aplicação voltar a ficar ativa.
 
 # O QUE FAZER
 
