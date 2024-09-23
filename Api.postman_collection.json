@@ -62,7 +62,7 @@
 		{
 			"name": "Deleta um jogo com base no ID fornecido.",
 			"request": {
-				"method": "GET",
+				"method": "DELETE",
 				"header": [],
 				"description": "### DELETE /games/delete/10\n\nDeletes a game with the specified ID.\n\n#### Request Body\n\nThis request does not require a request body.\n\n#### Response\n\nThe response is in JSON format and has the following schema:\n\n``` json\n{\n    \"message\": \"Jogo deletado com sucesso\",\n    \"game\": {\n        \"name\": \"Deadlings: Rotten Edition\",\n        \"release_date\": \"Nov 11, 2014\",\n        \"estimated_owners\": \"50000 - 100000\",\n        \"metacritic_score\": 0,\n        \"negative_rev\": 45,\n        \"average_playtime\": 703,\n        \"genres\": \"Action,Adventure,Indie\",\n        \"id\": 10,\n        \"price\": 3.99,\n        \"about\": \"Death is lonely. He has zero friends on his FaceTome account and no one to hang out with. So, in order to feel better he begins “Project Deadlings”. Death buys a factory where he can build his laboratory and begin training a massive army of zombie minions. As the army of Deadlings grows, the mazes of the laboratory become deadlier, loaded with puzzles and death-defying traps. Different Deadlings have their own unique abilities: Bonesack is agile - he can run and jump, Creep can climb on walls and ceilings, Lazybrain treads slowly but carefully and Stencher... well Stencher has gastric problems so he can use his powerful gas clouds to fly. You will have to combine all of these abilities to find your way in Death's Maze. Can you help Death to kill his boredom? Will you be able to navigate all 60+ levels available in Deadlings? Will you complete Project Deadlings, and successfully train all of your zombie minions? Arcade side-scroller with strategy elements! Four different types of zombie minions with unique abilities! 70 levels of pure zombie gore fun! Additional game mode - Nightmare - only for the hardcore gamers! What's new in the Rotten Edition? 10 brand new bonus levels 15 new levels in Nightmare Mode Steam achievements and leaderboards Full controller support Nightmare mode unlocked from the beginning Steam Trading Cards and Badges HD graphics\",\n        \"positive_rev\": 225,\n        \"achievements\": 32,\n        \"categories\": \"Single-player,Steam Achievements,Steam Trading Cards,Partial Controller Support,Steam Cloud\",\n        \"tags\": \"Action,Indie,Adventure,Puzzle-Platformer,Arcade,Zombies\"\n    }\n}\n\n ```"
 			},
@@ -113,71 +113,9 @@
 			]
 		},
 		{
-			"name": "Patch",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"description": "### Edit Game Details\n\nThis endpoint allows the client to update the details of a specific game.\n\n#### Request Body\n\n- `name` (string, optional): The updated name of the game.\n    \n- `about` (string, optional): A brief description of the game.\n    \n- `release_date` (string, optional): The updated release date of the game.\n    \n\n#### Response\n\nThe response is in JSON format and has the following schema:\n\n``` json\n{\n    \"message\": \"Jogo editado com sucesso\",\n    \"game\": {\n        \"name\": \"Counter-Strike: Global Offensive\",\n        \"release_date\": \"May 31, 2021\",\n        \"estimated_owners\": \"0 - 20000\",\n        \"metacritic_score\": 0,\n        \"negative_rev\": 2,\n        \"average_playtime\": 0,\n        \"genres\": \"Action,Casual\",\n        \"id\": 46160,\n        \"price\": 8.99,\n        \"about\": \"Jogo de dar bala\",\n        \"positive_rev\": 0,\n        \"achievements\": 6,\n        \"categories\": \"Multi-player,PvP,Online PvP,Steam Achievements,Full controller support,Stats\",\n        \"tags\": \"Action,Casual,Flight,Multiplayer,Arcade,Character Customization,3D,Colorful,PvP,Side Scroller,Combat\"\n    }\n}\n\n ```"
-			},
-			"response": [
-				{
-					"name": "Editando jogo",
-					"originalRequest": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"Counter-Strike: Global Offensive\",\r\n  \"about\": \"Jogo de dar bala\",\r\n  \"release_date\": \"Aug 21, 2024\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:8000/games/edit/46160",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8000",
-							"path": [
-								"games",
-								"edit",
-								"46160"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "date",
-							"value": "Sun, 22 Sep 2024 22:03:14 GMT"
-						},
-						{
-							"key": "server",
-							"value": "uvicorn"
-						},
-						{
-							"key": "content-length",
-							"value": "521"
-						},
-						{
-							"key": "content-type",
-							"value": "application/json"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"message\": \"Jogo editado com sucesso\",\n    \"game\": {\n        \"name\": \"Counter-Strike: Global Offensive\",\n        \"release_date\": \"May 31, 2021\",\n        \"estimated_owners\": \"0 - 20000\",\n        \"metacritic_score\": 0,\n        \"negative_rev\": 2,\n        \"average_playtime\": 0,\n        \"genres\": \"Action,Casual\",\n        \"id\": 46160,\n        \"price\": 8.99,\n        \"about\": \"Jogo de dar bala\",\n        \"positive_rev\": 0,\n        \"achievements\": 6,\n        \"categories\": \"Multi-player,PvP,Online PvP,Steam Achievements,Full controller support,Stats\",\n        \"tags\": \"Action,Casual,Flight,Multiplayer,Arcade,Character Customization,3D,Colorful,PvP,Side Scroller,Combat\"\n    }\n}"
-				}
-			]
-		},
-		{
 			"name": "Cria um novo jogo com base nos dados fornecidos.",
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [],
 				"description": "### Add New Game\n\nThis endpoint allows you to add a new game to the database.\n\n#### Request Body\n\n- `name` (string): The name of the game.\n    \n- `release_date` (string): The release date of the game.\n    \n- `estimated_owners` (string): The estimated number of owners of the game.\n    \n- `price` (number): The price of the game.\n    \n- `about` (string): Description about the game.\n    \n- `metacritic_score` (number): The Metacritic score of the game.\n    \n- `positive_rev` (number): The number of positive reviews for the game.\n    \n- `negative_rev` (number): The number of negative reviews for the game.\n    \n- `achievements` (number): The number of achievements in the game.\n    \n- `average_playtime` (number): The average playtime of the game.\n    \n- `categories` (string): Categories of the game.\n    \n- `genres` (string): Genres of the game.\n    \n- `tags` (string): Tags associated with the game.\n    \n\n#### Response\n\n- `name` (string): The name of the added game.\n    \n- `release_date` (string): The release date of the added game.\n    \n- `estimated_owners` (string): The estimated number of owners of the added game.\n    \n- `price` (number): The price of the added game.\n    \n- `about` (string): Description about the added game.\n    \n- `metacritic_score` (number): The Metacritic score of the added game.\n    \n- `positive_rev` (number): The number of positive reviews for the added game.\n    \n- `negative_rev` (number): The number of negative reviews for the added game.\n    \n- `achievements` (number): The number of achievements in the added game.\n    \n- `average_playtime` (number): The average playtime of the added game.\n    \n- `categories` (string): Categories of the added game.\n    \n- `genres` (string): Genres of the added game.\n    \n- `tags` (string): Tags associated with the added game.\n    \n- `id` (number): The unique identifier of the added game.\n    \n\n#### Example\n\n``` json\n{\n    \"name\": \"Example Game\",\n    \"release_date\": \"2022-01-01\",\n    \"estimated_owners\": \"1000000\",\n    \"price\": 49.99,\n    \"about\": \"This is an example game.\",\n    \"metacritic_score\": 85,\n    \"positive_rev\": 1500,\n    \"negative_rev\": 200,\n    \"achievements\": 30,\n    \"average_playtime\": 40,\n    \"categories\": \"Action, Adventure\",\n    \"genres\": \"RPG\",\n    \"tags\": \"Single Player, Open World\"\n}\n\n ```"
 			},
@@ -237,7 +175,7 @@
 		{
 			"name": "Edita um jogo existente com base no ID fornecido e nos novos dados.",
 			"request": {
-				"method": "GET",
+				"method": "PUT",
 				"header": [],
 				"description": "### Update Game Details\n\nThis endpoint allows the user to update the details of a specific game.\n\n#### Request Body\n\n- `name` (string, optional): The name of the game.\n    \n- `about` (string, optional): Description about the game.\n    \n- `release_date` (string, optional): The release date of the game.\n    \n\n#### Response (200 - OK)\n\nThe response will be a JSON object with the following properties:\n\n``` json\n{\n    \"message\": \"Jogo editado com sucesso\",\n    \"game\": {\n        \"name\": \"Counter-Strike: Global Offensive\",\n        \"release_date\": \"May 31, 2021\",\n        \"estimated_owners\": \"0 - 20000\",\n        \"metacritic_score\": 0,\n        \"negative_rev\": 2,\n        \"average_playtime\": 0,\n        \"genres\": \"Action,Casual\",\n        \"id\": 46160,\n        \"price\": 8.99,\n        \"about\": \"Jogo de dar bala\",\n        \"positive_rev\": 0,\n        \"achievements\": 6,\n        \"categories\": \"Multi-player,PvP,Online PvP,Steam Achievements,Full controller support,Stats\",\n        \"tags\": \"Action,Casual,Flight,Multiplayer,Arcade,Character Customization,3D,Colorful,PvP,Side Scroller,Combat\"\n    }\n}\n\n ```\n\n#### JSON Schema\n\n``` json\n{\n    \"message\": \"Jogo editado com sucesso\",\n    \"game\": {\n        \"name\": \"Counter-Strike: Global Offensive\",\n        \"release_date\": \"May 31, 2021\",\n        \"estimated_owners\": \"0 - 20000\",\n        \"metacritic_score\": 0,\n        \"negative_rev\": 2,\n        \"average_playtime\": 0,\n        \"genres\": \"Action,Casual\",\n        \"id\": 46160,\n        \"price\": 8.99,\n        \"about\": \"Jogo de dar bala\",\n        \"positive_rev\": 0,\n        \"achievements\": 6,\n        \"categories\": \"Multi-player,PvP,Online PvP,Steam Achievements,Full controller support,Stats\",\n        \"tags\": \"Action,Casual,Flight,Multiplayer,Arcade,Character Customization,3D,Colorful,PvP,Side Scroller,Combat\"\n    }\n}\n\n ```"
 			},

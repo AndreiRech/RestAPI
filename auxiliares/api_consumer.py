@@ -79,7 +79,7 @@ def main():
     
     # Get games/id/2264
     print('Get games/id/\n')
-    print(get_game_by_id(2265))
+    print(get_game_by_id(2264))
     print('\n')
     
     # Get games/name/Cuphead
@@ -97,14 +97,14 @@ def main():
     print(create_game(jogo))
     print('\n')
         
-    # Delete games/delete/2264
+    # Delete games/delete/2266
     print('Delete games/delete/\n')
-    print(delete_game(2265))
+    print(delete_game(2266))
     print('\n')
     
-    # Patch games/edit/46160
+    # Patch games/edit/31159
     print('Patch games/edit/\n')
-    print(edit_game(46160, editar))
+    print(edit_game(31159, editar))
     print('\n')
     
 main()
